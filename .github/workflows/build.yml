@@ -1,0 +1,25 @@
+name: Java Testing CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v2
+
+      - name: Configurar JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: "17"
+
+      - name: Build with Gradle
+        run: ./gradlew build --no-daemon
+
+      - name: Run unit tests
+        run: ./gradlew test --no-daemon
