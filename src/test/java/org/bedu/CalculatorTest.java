@@ -10,4 +10,9 @@ public class CalculatorTest {
   public void sum() {
     assertEquals(Calculator.sum(0, 0), 0);
   }
+
+  @Test
+  public void sum2() {
+    assertEquals(Calculator.sum(0, 0), 1);
+  }
 }
