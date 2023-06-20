@@ -3,7 +3,7 @@ name: Java Testing CI
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-test:
